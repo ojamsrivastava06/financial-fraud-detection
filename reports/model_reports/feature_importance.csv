@@ -1,0 +1,35 @@
+feature,importance
+suspicious_keyword_flag,4.831734995230586
+is_international_flag,4.61494696358716
+is_night_transaction,4.425021665506129
+account_age_years,1.0515412679042369
+Account_Age_Days,1.045730978181157
+Device_Type_Mobile,0.8079116302848234
+Device_Type_POS,0.6507878262406479
+Merchant_Category_Travel,0.6098269855259408
+Device_Type_Desktop,0.5854087394688179
+Payment_Method_NetBanking,0.5027899324992274
+Merchant_Category_Utilities,0.4743013466546453
+Payment_Method_PayPal,0.43727105496888447
+Location_Hyderabad,0.42480070797578423
+Merchant_Category_Electronics,0.4234437938732627
+Payment_Method_Debit Card,0.417970031131673
+Payment_Method_Credit Card,0.3582829418068189
+Location_Mumbai,0.3326515166576369
+Location_Delhi,0.3310289746795086
+Payment_Method_UPI,0.32779423560337506
+Location_Kolkata,0.3145552451568591
+Merchant_Category_Grocery,0.2847698953709593
+Location_Pune,0.23570720071623477
+Location_Chennai,0.21255844898025564
+Location_Bengaluru,0.19280610184650268
+Merchant_Category_Health,0.18911710013698688
+Average_Spend,0.18375999625794934
+Merchant_Category_Food,0.159085191098376
+Previous_Transactions,0.14090428091464846
+is_high_value_transaction,0.13633855600673842
+Merchant_Category_Fashion,0.10851597490611267
+Transaction_Amount,0.10558387925563172
+spend_to_avg_ratio,0.026558260646045575
+Merchant_Category_Entertainment,0.012079858255239065
+is_weekend,0.0073904035668436495

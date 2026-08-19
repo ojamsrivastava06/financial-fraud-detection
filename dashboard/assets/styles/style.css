@@ -1,0 +1,75 @@
+/* Modern Glassmorphic Dark Theme Styling for Streamlit Dashboard */
+
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-blue: #38bdf8;
+    --accent-purple: #818cf8;
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+.stApp {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Header Styling */
+.main-header {
+    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.main-header h1 {
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0;
+}
+
+.main-header p {
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+/* Card Containers */
+.status-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.status-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+.status-card h4 {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.status-card .status-value {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+    background-color: #1e293b;
+    border-right: 1px solid var(--border-color);
+}

@@ -1,0 +1,4 @@
+model,cv_pr_auc,test_pr_auc,test_roc_auc,test_precision,test_recall,test_f1,test_accuracy
+Logistic Regression,0.4315,0.4135,0.8904,0.2712,1.0,0.4267,0.742
+XGBoost,0.3675,0.3413,0.8683,0.275,0.6875,0.3929,0.796
+Random Forest,0.3878,0.34,0.8588,0.2584,0.8854,0.4,0.745

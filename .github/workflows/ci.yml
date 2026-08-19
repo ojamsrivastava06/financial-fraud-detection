@@ -1,0 +1,71 @@
+name: CI/CD Pipeline - Financial Fraud Detection Platform
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-and-lint:
+    name: Build, Lint & Test Suite
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Code Quality & Linting Check (Ruff)
+        run: |
+          ruff check src/ tests/ dashboard/ --ignore E501,E402
+
+      - name: Verify ML Model & Preprocessor Artifacts
+        run: |
+          python -c "from src.models.model_registry import ModelRegistry; m, p, meta = ModelRegistry().load_active_model(); assert m is not None, 'Trained model missing'; assert p is not None, 'Preprocessor missing'; assert meta is not None, 'Metadata missing'; print('Artifact verification passed.')"
+
+      - name: Verify FastAPI Import & Readiness Route
+        run: |
+          python -c "from src.api.main import app; print('FastAPI app imported successfully:', app.title)"
+
+      - name: Run Pytest Test Suite
+        run: |
+          python -m pytest --tb=short -v
+
+  docker-build:
+    name: Docker Container Build Check
+    runs-on: ubuntu-latest
+    needs: test-and-lint
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build FastAPI Backend Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: fraud-detection-api:latest
+
+      - name: Build Streamlit Dashboard Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile.dashboard
+          push: false
+          tags: fraud-detection-dashboard:latest

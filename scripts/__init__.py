@@ -1,0 +1,3 @@
+"""
+Automation scripts package.
+"""

@@ -1,0 +1,212 @@
+{
+  "dataset_name": "financial_fraud_detection_dataset.csv",
+  "total_rows": 5000,
+  "total_columns": 14,
+  "duplicate_rows": 0,
+  "constant_columns": [],
+  "numerical_columns": [
+    "Transaction_Amount",
+    "Previous_Transactions",
+    "Average_Spend",
+    "Account_Age_Days"
+  ],
+  "categorical_columns": [
+    "Merchant_Category",
+    "Payment_Method",
+    "Device_Type",
+    "Location",
+    "Suspicious_Keyword"
+  ],
+  "datetime_columns": [
+    "Transaction_Date"
+  ],
+  "boolean_columns": [
+    "Is_International"
+  ],
+  "identifier_columns": [
+    "Transaction_ID",
+    "Customer_ID"
+  ],
+  "target_column": "Fraudulent",
+  "columns_detail": [
+    {
+      "column_name": "Transaction_ID",
+      "data_type": "object",
+      "role": "identifier",
+      "unique_values": 5000,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "T100000",
+        "T100001",
+        "T100002"
+      ]
+    },
+    {
+      "column_name": "Customer_ID",
+      "data_type": "object",
+      "role": "identifier",
+      "unique_values": 3847,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "CUST3252",
+        "CUST1630",
+        "CUST7852"
+      ]
+    },
+    {
+      "column_name": "Transaction_Date",
+      "data_type": "object",
+      "role": "datetime feature",
+      "unique_values": 4980,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "04-10-2023 07:45",
+        "26-09-2023 08:29",
+        "18-07-2023 15:54"
+      ]
+    },
+    {
+      "column_name": "Transaction_Amount",
+      "data_type": "float64",
+      "role": "numerical feature",
+      "unique_values": 4302,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "37.54",
+        "240.81",
+        "105.34"
+      ]
+    },
+    {
+      "column_name": "Merchant_Category",
+      "data_type": "object",
+      "role": "categorical feature",
+      "unique_values": 8,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "Travel",
+        "Utilities",
+        "Entertainment"
+      ]
+    },
+    {
+      "column_name": "Payment_Method",
+      "data_type": "object",
+      "role": "categorical feature",
+      "unique_values": 5,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "PayPal",
+        "Debit Card",
+        "NetBanking"
+      ]
+    },
+    {
+      "column_name": "Device_Type",
+      "data_type": "object",
+      "role": "categorical feature",
+      "unique_values": 3,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "POS",
+        "Mobile",
+        "Desktop"
+      ]
+    },
+    {
+      "column_name": "Location",
+      "data_type": "object",
+      "role": "categorical feature",
+      "unique_values": 7,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "Bengaluru",
+        "Kolkata",
+        "Mumbai"
+      ]
+    },
+    {
+      "column_name": "Is_International",
+      "data_type": "int64",
+      "role": "boolean feature",
+      "unique_values": 2,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "column_name": "Previous_Transactions",
+      "data_type": "int64",
+      "role": "numerical feature",
+      "unique_values": 199,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "94",
+        "76",
+        "60"
+      ]
+    },
+    {
+      "column_name": "Average_Spend",
+      "data_type": "float64",
+      "role": "numerical feature",
+      "unique_values": 4753,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "417.4",
+        "335.47",
+        "432.03"
+      ]
+    },
+    {
+      "column_name": "Account_Age_Days",
+      "data_type": "int64",
+      "role": "numerical feature",
+      "unique_values": 1827,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "1492",
+        "66",
+        "216"
+      ]
+    },
+    {
+      "column_name": "Suspicious_Keyword",
+      "data_type": "object",
+      "role": "categorical feature",
+      "unique_values": 2,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "column_name": "Fraudulent",
+      "data_type": "int64",
+      "role": "target",
+      "unique_values": 2,
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "sample_values": [
+        "0",
+        "1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "original_row_count": 5000,
+  "final_row_count": 5000,
+  "rows_removed": 0,
+  "duplicate_count": 0,
+  "missing_values_before": 0,
+  "missing_values_after": 0,
+  "outliers_flagged_transaction_amount": 44,
+  "columns_transformed": [
+    "Transaction_ID",
+    "Customer_ID",
+    "Transaction_Date",
+    "Transaction_Amount",
+    "Merchant_Category",
+    "Payment_Method",
+    "Device_Type",
+    "Location",
+    "Is_International",
+    "Previous_Transactions",
+    "Average_Spend",
+    "Account_Age_Days",
+    "Suspicious_Keyword",
+    "Fraudulent"
+  ],
+  "features_created": [
+    "spend_to_avg_ratio",
+    "is_high_value_transaction",
+    "transaction_hour",
+    "transaction_day_of_week",
+    "is_night_transaction",
+    "is_weekend",
+    "account_age_years",
+    "suspicious_keyword_flag",
+    "is_international_flag"
+  ],
+  "warnings": []
+}

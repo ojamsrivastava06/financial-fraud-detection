@@ -9,7 +9,6 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-from xgboost import XGBClassifier
 from sklearn.model_selection import StratifiedKFold, RandomizedSearchCV, GridSearchCV
 from sklearn.metrics import make_scorer, average_precision_score
 from src.utils.logger import get_logger
@@ -115,6 +114,13 @@ def train_xgboost(
     Train and tune XGBoost Classifier with scale_pos_weight for class imbalance.
     """
     logger.info("Training & tuning XGBoost Classifier...")
+    try:
+        from xgboost import XGBClassifier
+    except ImportError:
+        raise ImportError(
+            "XGBoost is not installed. To train XGBoost models, install xgboost via pip install xgboost."
+        )
+
     # Calculate scale_pos_weight = negative_count / positive_count
     neg_count = (y_train == 0).sum()
     pos_count = (y_train == 1).sum()

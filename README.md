@@ -90,7 +90,6 @@ financial-fraud-detection/
 ├── LICENSE                                 # MIT License
 ├── README.md                               # Project documentation & quickstart
 ├── requirements.txt                        # Pinned dependencies for Streamlit Cloud
-└── VIVA_PROJECT_MAP.md                     # Concept-to-code viva presentation map
 ```
 
 ---

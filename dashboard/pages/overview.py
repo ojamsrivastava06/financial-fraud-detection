@@ -31,6 +31,30 @@ def render_overview_page():
         unsafe_allow_html=True
     )
 
+    # Live Demo & System User Guide
+    with st.expander("📖 Live Demo & System User Guide", expanded=False):
+        st.markdown(
+            """
+            ### Welcome to the Financial Fraud Detection Platform
+            This platform is an end-to-end Machine Learning system for real-time transaction scoring, calibrated risk categorization, and security incident investigation.
+
+            #### 🧭 Dashboard Navigation:
+            1. **📊 Overview**: Executive KPIs, transaction volume time-series, risk tier distribution, and recently flagged high-risk transactions.
+            2. **💳 Transactions**: Granular multi-criteria search and filter explorer (by Customer, Category, Risk Tier) with transaction inspection.
+            3. **🔍 Fraud Analysis**: Behavioral distribution charts comparing fraud patterns across merchant categories, payment methods, device types, and metro locations.
+            4. **⚖️ Risk Analysis**: Machine learning score distributions, probability histograms, and decision boundary calibration tables.
+            5. **🚨 Alerts**: Operational security review queue where analysts can inspect flagged events and transition statuses (`OPEN` → `INVESTIGATING` → `RESOLVED` / `DISMISSED`).
+            6. **🎯 Model Performance**: Measured benchmark evaluation metrics (100% Recall, 0.8904 ROC-AUC), ROC curves, Precision-Recall curves, confusion matrix, and feature rankings.
+
+            #### 🏷️ Risk Tier Interpretation:
+            - **🟢 LOW Risk (`< 0.35`)**: Legitimate transaction profile → **Action: `APPROVE`**.
+            - **🟡 MEDIUM Risk (`0.35 - 0.65`)**: Elevated risk indicators → **Action: `MONITOR`**.
+            - **🔴 HIGH Risk (`≥ 0.65`)**: Suspicious anomalous pattern → **Action: `FLAG_FOR_REVIEW`** (Triggers security alert).
+
+            > ℹ️ *Note: The data displayed in this live demo represents a curated demonstration dataset (5,000 records) stored in the bundled SQLite engine.*
+            """
+        )
+
     try:
         db = SessionLocal()
         try:

@@ -85,7 +85,6 @@ financial-fraud-detection/
 │   ├── database/                           # Connection, ORM models, repositories, schemas
 │   ├── models/                             # Model registry, inference, risk scoring
 │   └── utils/                              # Structured logging & metrics
-├── .env.example                            # Configuration environment template
 ├── .gitignore                              # Production Git exclusion rules
 ├── LICENSE                                 # MIT License
 ├── README.md                               # Project documentation & quickstart

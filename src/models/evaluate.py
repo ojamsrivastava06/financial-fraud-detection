@@ -68,7 +68,7 @@ def plot_confusion_matrix(
     """Plot and save confusion matrix figure."""
     plt.figure(figsize=(6, 5))
     sns.set_theme(style="white")
-    ax = sns.heatmap(
+    sns.heatmap(
         cm,
         annot=True,
         fmt="d",

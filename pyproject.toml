@@ -1,0 +1,21 @@
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+target-version = 'py311'
+exclude = ['.git', '.venv', '__pycache__', '.pytest_cache']
+
+[tool.ruff.lint]
+select = ['E', 'F', 'W']
+ignore = ['E501', 'F401', 'E402']
+
+[tool.pytest.ini_options]
+testpaths = ['tests']
+python_files = ['test_*.py']
+python_functions = ['test_*']
+filterwarnings = [
+    'ignore::DeprecationWarning',
+    'ignore::UserWarning',
+]
